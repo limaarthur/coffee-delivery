@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { mixins } from './themes/mixins'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -13,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  body, input, textarea, button {
+    ${mixins.fonts.textM};
+  }
+    
   button {
     border: none;
     cursor: pointer;
