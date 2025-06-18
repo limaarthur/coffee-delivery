@@ -7,7 +7,7 @@ export function Header() {
   return (
     <Container>
       <Link to="/">
-        <img src="/images/logo.svg" alt="Coffee Delivery" />
+        <img src="/logo.svg" alt="Coffee Delivery" />
       </Link>
 
       <Aside>
