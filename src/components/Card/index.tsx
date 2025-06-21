@@ -10,6 +10,7 @@ import {
   Order,
 } from './styles'
 import { useTheme } from 'styled-components'
+import { QuantityInput } from '../QuantityInput'
 
 export function Card() {
   const theme = useTheme()
@@ -35,6 +36,8 @@ export function Card() {
         </Price>
 
         <Order>
+          <QuantityInput />
+
           <button>
             <ShoppingCartSimpleIcon
               size={22}
