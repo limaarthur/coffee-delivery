@@ -65,3 +65,23 @@ export const Info = styled.div`
     }
   }
 `
+
+export const CoffeeList = styled.section`
+  margin: 2rem 2rem 2rem auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.3rem;
+
+  > h2 {
+    ${mixins.fonts.titleL}
+    color: ${({ theme }) => theme.colors['base-subtitle']}
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 2.5rem;
+    grid-column-gap: 2rem;
+  }
+`
