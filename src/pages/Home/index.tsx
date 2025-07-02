@@ -1,3 +1,4 @@
+import { coffees } from '../../data/coffees'
 import {
   CoffeeIcon,
   PackageIcon,
@@ -81,11 +82,9 @@ export function Home() {
         <h2>Nossos cafés</h2>
 
         <div>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {coffees.map((coffee) => (
+            <Card key={coffee.id} coffee={coffee} />
+          ))}
         </div>
       </CoffeeList>
     </div>

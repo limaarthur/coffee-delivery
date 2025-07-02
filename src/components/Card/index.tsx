@@ -12,27 +12,38 @@ import {
 import { useTheme } from 'styled-components'
 import { QuantityInput } from '../QuantityInput'
 
-export function Card() {
+type CoffeeProps = {
+  coffee: {
+    id: string
+    title: string
+    description: string
+    tags: string[]
+    price: number
+    image: string
+  }
+}
+
+export function Card({ coffee }: CoffeeProps) {
   const theme = useTheme()
 
   return (
     <Container>
-      <CoffeeImg src="./images/coffees/expresso.png" alt="Café expresso" />
+      <CoffeeImg src={coffee.image} alt={coffee.title} />
 
       <Tags>
-        <span>tradicional</span>
+        {coffee.tags.map((tag) => (
+          <span key={tag}>{tag}</span>
+        ))}
       </Tags>
 
-      <Title>Expresso Tradicional</Title>
+      <Title>{coffee.title}</Title>
 
-      <Description>
-        O tradicional café feito com água quente e grãos moídos
-      </Description>
+      <Description>{coffee.description}</Description>
 
       <Control>
         <Price>
           <span>R$</span>
-          <span>9,90</span>
+          <span>{coffee.price.toFixed(2)}</span>
         </Price>
 
         <Order>
